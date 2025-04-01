@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: service-order
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+      eager: true
+  config:
+    import: nacos:service-order.yml
+server:
+  port: 8000
+
+feign:
+  sentinel:
+    enabled: true

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: service-product
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        import-check: #暂时用不到配置中心但是引入了配置中心，需要禁止导入检查
+          enabled: false
+    sentinel:
+      transport:
+        dashboard: localhost:8080 #sentinel控制台地址
+      eager: true
+  config:
+    import: nacos:service-product.yml
+server:
+  port: 9000
